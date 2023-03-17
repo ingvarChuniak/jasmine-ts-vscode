@@ -4,39 +4,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug mocha parallel for invoices",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
-      "args": [
-        "${file}",
-        "--extension",
-        "ts",
-        "--watch",
-        "src",
-        "--require",
-        "ts-node/register",
-      ],
-      //"runtimeExecutable": "/usr/local/bin/node"
-    },
-    // {
-    //   "type": "node",
-    //   "request": "launch",
-    //   "name": "Launch Jasmine Current File",
-    //   "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
-    //   "args": ["${file}"],
-    //   "console": "externalTerminal"
-    // },
-    // {
-    //   "type": "node",
-    //   "request": "launch",
-    //   "name": "Build Project",
-    //   "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
-    //   "args": ["${file}"],
-    //   "preLaunchTask": "npm: build",
-    //   "sourceMaps": true,
-    //   "smartStep": true,
-    //   "internalConsoleOptions": "openOnSessionStart",
-    //   "outFiles": ["${workspaceFolder}/out/**/*.js"]
-    // }
+      "name": "Debug Single Jasmine Spec",
+      "runtimeArgs": ["-r", "ts-node/register", "${workspaceFolder}/node_modules/.bin/jasmine"],
+      "args": ["${workspaceFolder}/${relativeFile}"],
+      "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**/*.js"],
+      "env": { "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json" }
+    }
   ]
 }

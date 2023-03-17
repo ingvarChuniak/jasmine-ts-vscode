@@ -1,10 +1,7 @@
 {
   "spec_dir": "src",
   "spec_files": ["**/*[sS]pec.?(m){js,ts}"],
-  "helpers": [
-    "helpers/typescript.js",
-    "helpers/**/*.{js,ts}"
-  ],
+  "helpers": ["../spec/helpers/swc-typescript.js", "../spec/helpers/**/*.{js,ts}"],
   "env": {
     "stopSpecOnExpectationFailure": false,
     "random": true
